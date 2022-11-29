@@ -20,22 +20,29 @@ Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andia
 
 const parola = prompt("inserisci una parola");
 
-function isPalindroma() {
+function isPalindroma(value) {
 
-    const lunghezza = parola.length; 
+    const lunghezza = value.length;
+    
+    let isPal = true;
 
     for (let i = 0; i < lunghezza / 2; i++) {  
 
-        if (parola[i] !== parola[lunghezza - 1 - i]) {  
-            alert( 'Non è palindroma');  
+        if (value[i] !== value[lunghezza - 1 - i]) {  
+            isPal = false;
+            alert( 'Non è palindroma'); 
+            
         }  
+        if (isPal){
+            alert( 'Si, è palindroma');  
+        } 
     }  
-    alert( 'Si, è palindroma');  
 
-    return;
+
 }
 
 const result = isPalindroma(parola);  
 
 console.log(result);  
+
 
